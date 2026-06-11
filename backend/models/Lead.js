@@ -23,11 +23,10 @@ const leadSchema = new mongoose.Schema({
   },
   plotName: {
     type: String,
-    required: function() { return this.type === "inquiry"; }
+    trim: true
   },
   visitDate: {
-    type: Date,
-    required: function() { return this.type === "visit"; }
+    type: Date
   },
   message: {
     type: String,

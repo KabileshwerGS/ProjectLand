@@ -45,7 +45,7 @@ export default function App() {
   // Fetch Plots from MongoDB Backend
   const fetchPlots = async () => {
     try {
-      const apiBaseUrl = import.meta.env.VITE_API_URL || "http://localhost:5001";
+      const apiBaseUrl = import.meta.env.VITE_API_URL || "https://project-land-mu.vercel.app";
       const response = await fetch(`${apiBaseUrl}/api/plots`);
       if (response.ok) {
         const data = await response.json();

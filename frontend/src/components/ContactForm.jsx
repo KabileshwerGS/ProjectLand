@@ -28,7 +28,7 @@ export default function ContactForm({ onSubmitSuccess }) {
     };
 
     try {
-      const apiBaseUrl = import.meta.env.VITE_API_URL || "https://project-land-mu.vercel.app";
+      const apiBaseUrl = import.meta.env.VITE_API_URL || "https://land-project-backend.vercel.app";
       const response = await fetch(`${apiBaseUrl}/api/leads`, {
         method: "POST",
         headers: {

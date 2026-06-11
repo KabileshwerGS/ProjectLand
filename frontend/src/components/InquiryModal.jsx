@@ -19,7 +19,8 @@ export default function InquiryModal({ plotName, isOpen, onClose, onSubmitSucces
     };
 
     try {
-      const response = await fetch("http://localhost:5001/api/leads", {
+      const apiBaseUrl = import.meta.env.VITE_API_URL || "http://localhost:5001";
+      const response = await fetch(`${apiBaseUrl}/api/leads`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

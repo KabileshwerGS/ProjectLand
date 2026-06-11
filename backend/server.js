@@ -21,17 +21,23 @@ app.get("/", (req, res) => {
 });
 
 // Database Connection
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/terragrande";
 
 mongoose
   .connect(MONGO_URI)
   .then(() => {
     console.log("Connected to MongoDB successfully");
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
   })
   .catch((err) => {
     console.error("Database connection error:", err);
   });
+
+// Only start Express server listener if not running in Vercel Serverless environment
+if (process.env.NODE_ENV !== "production" && !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
+
+module.exports = app;

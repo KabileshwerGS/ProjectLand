@@ -45,7 +45,8 @@ export default function App() {
   // Fetch Plots from MongoDB Backend
   const fetchPlots = async () => {
     try {
-      const response = await fetch("http://localhost:5001/api/plots");
+      const apiBaseUrl = import.meta.env.VITE_API_URL || "http://localhost:5001";
+      const response = await fetch(`${apiBaseUrl}/api/plots`);
       if (response.ok) {
         const data = await response.json();
         setPlots(data);

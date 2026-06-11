@@ -21,7 +21,7 @@ const initialPlots = [
 
 const seedDatabase = async () => {
   try {
-    const mongoUri = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/terragrande";
+    const mongoUri = process.env.MONGO_URI || "mongodb+srv://kabileshwergs84_db_user:Brownie28*@cluster4.429y8mj.mongodb.net/terragrande?retryWrites=true&w=majority";
     
     console.log("Connecting to MongoDB...");
     await mongoose.connect(mongoUri);

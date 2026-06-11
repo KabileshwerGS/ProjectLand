@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 
 // Database Connection
 const PORT = process.env.PORT || 5001;
-const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/terragrande";
+const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://kabileshwergs84_db_user:Brownie28*@cluster4.429y8mj.mongodb.net/terragrande?retryWrites=true&w=majority";
 
 mongoose
   .connect(MONGO_URI)
